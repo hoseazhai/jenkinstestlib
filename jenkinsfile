@@ -1,6 +1,8 @@
 #!groovy
 @Library('jenkinstestlib') _
 
+hello()
+
 def tools = new org.devolops.tools()
 
 
@@ -30,7 +32,7 @@ pipeline {
                     script{ //填写运行代码
                         println('获取代码')
                         tools.PrintMes("this is lib")
-                        //tools.PrintMes("获取代码",'green')
+                        tools.PrintMes("获取代码",'green')
                         println("${test}")
                         
                         input id: 'Test', message: '我们是否要继续？', ok: '是，继续吧！', parameters: [choice(choices: ['a', 'b'], description: '', name: 'test1')], submitter: 'admin'
@@ -49,7 +51,7 @@ pipeline {
                         timeout(time:20, unit:"MINUTES"){
                             script{
                                 println('应用打包')
-                                //tools.PrintMes("应用打包",'green')
+                                tools.PrintMes("应用打包",'green')
                                 mvnHome = tool "maven"
                                 JAVA_HOME = tool "jdk1.8"
                                 java = "$JAVA_HOME/bin/java"
@@ -67,7 +69,7 @@ pipeline {
                         timeout(time:30, unit:"MINUTES"){
                             script{
                                 print("代码扫描")
-                                //tools.PrintMes("代码扫描",'green')
+                                tools.PrintMes("代码扫描",'green')
                             }
                         }
                     }
