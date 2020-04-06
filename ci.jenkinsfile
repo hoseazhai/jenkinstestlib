@@ -14,7 +14,7 @@ pipeline{
         stage("build"){
             steps{
                 script{
-                    sh buildType buildShell
+                    println("测试一下${buildType}"
                     println(buildShell)
                     println(buildType)
                     build.Build(buildType,buildShell)
