@@ -13,8 +13,10 @@ pipeline{
             steps{
                 script{
                     build.Build(buildType,buildShell)
+                    /*
                     mvnhome = tool "maven"
                     sh "${mvnhome}/bin/mvn -v"
+                    */
                     }
                }
              }
