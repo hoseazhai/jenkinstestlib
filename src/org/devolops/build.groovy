@@ -10,6 +10,10 @@ def Build(buildType, buildShell){
     println("当前选择的构建类型为 ${buildType}")
     
     sh "${buildHome}/bin/${buildtype} ${buildShell}"
+    println(buildHome)
+    println(buildType)
+    println(buildShell)
+    
     
 }
     
