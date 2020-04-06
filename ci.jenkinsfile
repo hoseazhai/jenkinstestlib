@@ -1,4 +1,7 @@
 #!groovy
+@Library('jenkinstestlib') _
+
+def build = new org.devolops.build()
 
 String buildShell = "${env.buildShell}"
 
@@ -9,6 +12,7 @@ pipeline{
         stage("build"){
             steps{
                 script{
+                    build.Build(buildType,buildShell)
                     mvnhome = tool "maven"
                     sh "${mvnhome}/bin/mvn -v"
                     }
