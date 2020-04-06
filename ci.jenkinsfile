@@ -22,13 +22,13 @@ pipeline{
                     }
                }
              }
-        stage("npmBuild"){
+        /*stage("npmBuild"){
             steps{
                 script{
                     npmHome = tool "npm"
                     sh "export NODE_HOME=${npmHome} && export PATH=\$node_HOME/bin:\$PATH && ${npmHome}/bin/npm ${buildShell}"
                 }
             }
-        }
+        }*/
        }
   }
