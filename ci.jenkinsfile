@@ -3,6 +3,9 @@
 
 def build = new org.devolops.build()
 
+String buildType = "{env.buildType}"
+String buildShell = "{env.buildShell}"
+
 String buildShell = "${env.buildShell}"
 
 pipeline{
