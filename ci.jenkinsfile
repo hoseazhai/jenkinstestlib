@@ -1,3 +1,7 @@
+#!groovy
+
+String buildShell = "${env.buildShell}"
+
 pipeline{
     agent { node { label "master"}}
     
@@ -6,7 +10,7 @@ pipeline{
             steps{
                 script{
                     mvnhome = tool "maven"
-                    sh "${mvnhome}/bin/mvn -v"
+                    sh "${mvnhome}/bin/mvn ${buildShell}"
                     }
                }
              }
