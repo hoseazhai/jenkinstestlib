@@ -15,6 +15,7 @@ pipeline{
             steps{
                 script{
                     println(buildShell)
+                    println(buildType)
                     build.Build(buildType,buildShell)
                     /*
                     mvnhome = tool "maven"
