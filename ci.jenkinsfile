@@ -14,7 +14,7 @@ pipeline{
         stage("build"){
             steps{
                 script{
-                    build.Build(buildType,buildShell)
+                    build.Build(${buildType},${buildShell})
                     /*
                     mvnhome = tool "maven"
                     sh "${mvnhome}/bin/mvn -v"
@@ -22,13 +22,13 @@ pipeline{
                     }
                }
              }
-        /*stage("npmBuild"){
+        stage("npmBuild"){
             steps{
                 script{
                     npmHome = tool "npm"
                     sh "export NODE_HOME=${npmHome} && export PATH=\$node_HOME/bin:\$PATH && ${npmHome}/bin/npm ${buildShell}"
                 }
             }
-        }*/
+        }
        }
   }
