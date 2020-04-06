@@ -14,5 +14,13 @@ pipeline{
                     }
                }
              }
-           }
+        stage("npmBuild"){
+            steps{
+                script{
+                    npmHome = tool "npm"
+                    sh "${npmHome}/bin/npm ${buildShell}"
+                }
+            }
+        }
+       }
   }
